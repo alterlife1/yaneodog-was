@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yaneodog.restcat.mapper.CatTest">
+    <insert id="AddDog" statementType="CALLABLE" parameterType="hashmap" >
+        INSERT INTO dogs (name, year)
+        VALUES (#{name}, #{year});
+    </insert>
+
+    <select id="GetDog" statementType="CALLABLE" parameterType="hashmap" resultType="hashmap">
+        SELECT *
+        FROM dogs
+        WHERE uid = #{uid}
+    </select>
+</mapper>
